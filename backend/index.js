@@ -73,7 +73,7 @@ const userSchema = new mongoose.Schema({
 const userModel = mongoose.model("User",userSchema)
 
 const PORT = process.env.PORT || 8080
-mongoose.connect("mongodb+srv://hitesh:hitesh2024@cluster0.z97jv.mongodb.net/")
+mongoose.connect(process.env.MongoDB_Url)
 .then(()=>{
     console.log("MongoDB connected successfully");
     app.listen(PORT , ()=>console.log(`server is connected to PORT ${PORT}`))
